@@ -35,7 +35,7 @@ if (isset($_GET['login'])) {
 }
 
 if (isset($_GET['landing'])) {
-  if ($_GET['landing'] == 'success') {
+  if ($_GET['landing'] == 'successlogout') {
     echo "<script>alert('Logout berhasil berhasil!');</script>";
   }
 }

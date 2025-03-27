@@ -1,9 +1,5 @@
 <div class="background-image"></div>
 <section>
-    <?php if (isset($error)) {
-        echo "<p style='color: red;'>$error</p>";
-    } ?>
-
     <div class="login-form">
         <form method="post" action="./config/loginPROCESS.php">
             <h3>Login</h3>

@@ -8,6 +8,6 @@ session_unset();
 session_destroy();
 
 // Alihkan pengguna ke halaman login atau halaman beranda
-header("Location: ../index.php?page=landing&landing=success"); // Ganti index.php dengan halaman yang sesuai
+header("Location: ../index.php?page=landing&landing=successlogout"); // Ganti index.php dengan halaman yang sesuai
 exit();
 ?>
