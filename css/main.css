@@ -2,42 +2,53 @@
     background-color: #156a00;
 }
 
-section {
+.height1layar {
+    height: auto;
+}
+
+.height100vh {
     height: 100vh;
+    /* tinggi 100vh jika dibutuhkan di layar ponsel */
+}
+
+@media (min-width: 980px) {
+    .height1layar {
+        height: 100vh;
+        /* Tinggi 100vh hanya pada layar laptop */
+    }
+}
+
+section {
+    padding-top: 120px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-.crsl {
-    max-width: 100%;
-    height: auto;
-}
-
 .padR5 {
     padding-right: 20px;
 }
 
+.padT20 {
+    padding-top: 20px;
+}
+
+.padB20 {
+    padding-bottom: 40px;
+}
+
 .teks-bayangan-tebal {
-    text-shadow: 2px 2px 0px #156A00, 
-    4px 4px 0px #156A00, 
-    -2px -2px 0px #156A00;
+    text-shadow: 2px 2px 0px #156A00,
+        4px 4px 0px #156A00,
+        2px -2px 0px #156A00,
+        -2px -2px 0px #156A00;
 }
 
 
 /* header */
 
-/* .Headerbg {
-    background-color: #ACFA99 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-} */
 .Headerbg {
     background-color: #ACFA99 0;
     color: white;
@@ -54,16 +65,17 @@ section {
 
 .navbar-nav .nav-link {
     color: white;
-    text-shadow: 2px 2px 0px #156A00, 
-                 -2px -2px 0px #156A00,
-                 4px 4px 0px #156A00; 
+    text-shadow: 2px 2px 0px #156A00,
+        -2px -2px 0px #156A00,
+        4px 4px 0px #156A00;
     transition: color 0.5s ease, text-shadow 0.5s ease;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 980px) {
     .Headerbg {
         background-color: #ACFA99;
     }
+
     .navbar-nav .nav-link {
         color: black;
         text-shadow: none;
@@ -150,9 +162,146 @@ section {
 }
 
 
+/* landing.php */
+
+/* carousel */
+
+.carousel-item {
+    height: 100vh;
+    /* Tinggi carousel 100vh pada layar ponsel */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-item img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    /* Pastikan gambar mengisi wadah */
+}
+
+.carousel-caption {
+    text-align: center;
+    display: none;
+    /* Sembunyikan secara default */
+    /* Pusatkan teks */
+}
+
+@media (max-width: 980px) {
+
+    #carouselExampleCaptions {
+        margin-top: 0;
+        /* Hapus margin pada layar ponsel */
+    }
+
+    .carousel-item {
+        height: 100vh;
+        /* Tinggi carousel 100vh pada layar ponsel */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .carousel-item img {
+        height: 100%;
+        /* Sesuaikan tinggi gambar */
+    }
+
+    /* .carousel-caption {
+        position: relative;
+        bottom: auto;
+        top: 70%;
+        transform: translateY(0);
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+    } */
+
+    .carousel-caption {
+        position: relative;
+        bottom: 1.25rem;
+        left: 0 !important;
+        width: 100%;
+        color: white;
+        padding: 20px;
+        font-size: 0.8rem;
+    }
+}
+
+
 /* testimoni */
 
 .testimonial-section {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.testimonial-item {
+    padding: 30px;
+    display: none;
+    /* Sembunyikan semua item secara default */
+}
+
+.testimonial-item.active {
+    display: block;
+    /* Tampilkan item aktif */
+}
+
+.testimonial-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.testimonial-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.testimonial-role {
+    color: #6c757d;
+}
+
+.rounded-circle {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Gaya untuk navigasi */
+.testimonial-nav {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.testimonial-nav button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.testimonial-nav .prev,
+.testimonial-nav .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.testimonial-nav .prev {
+    left: 0;
+}
+
+.testimonial-nav .next {
+    right: 0;
+}
+
+/* Tambahkan gaya lain sesuai kebutuhan */
+
+/* .testimonial-section {
     background-color: #f8f9fa;
 }
 
@@ -179,7 +328,7 @@ section {
     width: 100px;
     height: 100px;
     object-fit: cover;
-}
+} */
 
 
 /* about us */
@@ -187,15 +336,6 @@ section {
 .abImg {
     max-width: 100%;
     height: 500px;
-}
-
-
-/* carousel */
-
-.carousel-item img {
-    object-fit: cover;
-    height: auto;
-    /* Sesuaikan tinggi carousel */
 }
 
 
@@ -298,7 +438,7 @@ section {
     width: 100%;
 }
 
-.login-form button:hover{
+.login-form button:hover {
     background-color: #3e8d41;
     color: white;
     font-weight: bold;
@@ -317,10 +457,11 @@ section {
     text-align: left;
 }
 
-.textdaftar{
+.textdaftar {
     padding-top: 15px;
 }
-.textdaftar a{
+
+.textdaftar a {
     padding-top: 15px;
     color: #2a80dc;
     font-weight: bold;
@@ -344,6 +485,7 @@ section {
     margin-left: 5px;
     white-space: nowrap;
 }
+
 .remember-me input {
     color: rgb(0, 0, 0);
     margin-bottom: 0;
@@ -360,10 +502,16 @@ section {
 
 /* product.php */
 
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+#produk {
+    margin-top: 120px;
+    /* Margin atas pada layar laptop */
+}
+
+@media (max-width: 980px) {
+    #produk {
+        margin-top: 0;
+        /* Tanpa margin atas pada layar ponsel */
+    }
 }
 
 .product-page {
@@ -383,12 +531,18 @@ body {
 .product-list {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    /* Tambahkan flex-wrap */
 }
 
 .product-item {
     text-align: center;
     border: 1px solid #ddd;
     padding: 20px;
+    width: 30%;
+    /* Sesuaikan lebar item */
+    margin-bottom: 20px;
+    /* Tambahkan margin bawah */
 }
 
 .product-item img {
@@ -412,6 +566,12 @@ body {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+}
+
+@media (max-width: 980px) {
+    .product-item {
+        width: 100%;
+    }
 }
 
 

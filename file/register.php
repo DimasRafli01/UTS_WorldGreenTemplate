@@ -1,4 +1,4 @@
-<section>
+<section class="height100vh">
     <div class="background-image"></div>
     <div class="login-form">
         <form METHOD="post" action="./config/registerPROCESS.php">

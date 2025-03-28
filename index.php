@@ -42,8 +42,10 @@ if (isset($_GET['landing'])) {
 // alert
 
 // memanggil page
+include 'include/template/css.php';
 include 'include/template/header.php';
 loadPage($page);
 include 'include/template/footer.php';
+include 'include/template/js.php';
 // end memanggil page
 ?>

@@ -1,5 +1,5 @@
 <div class="background-image"></div>
-<section>
+<section class="height100vh">
     <div class="login-form">
         <form method="post" action="./config/loginPROCESS.php">
             <h3>Login</h3>

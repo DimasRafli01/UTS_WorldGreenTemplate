@@ -1,4 +1,4 @@
-<section id="produk" style="margin-top:50px">
+<section id="produk" class="height1layar">
     <div class="product-page">
         <div class="product-header">
             <h1>Produk kami</h1>
